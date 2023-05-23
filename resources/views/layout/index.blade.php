@@ -16,6 +16,15 @@
     <link href="{{asset('assets/css/app.min.css')}}" rel="stylesheet" type="text/css" id="app-stylesheet" />
     <link href="{{asset('assets/libs/switchery/switchery.min.css')}}" rel="stylesheet" type="text/css" />
 
+    <link href="{{asset('assets/libs/dropify/dropify.min.css')}}" rel="stylesheet" type="text/css" />
+
+    <link href="{{asset('assets/libs/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
+
+     <!-- Responsive Table css -->
+    <link href="{{asset('assets/libs/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/libs/datatables/responsive.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/libs/datatables/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
+
     
 
     @yield('custom-style')
@@ -90,11 +99,42 @@
     <script src="{{asset('assets/libs/raphael/raphael.min.js')}}"></script>
 
     <script src="{{asset('assets/js/pages/dashboard.init.js')}}"></script>
+
+    <!-- Plugins js -->
+    <script src="{{asset('assets/libs/dropify/dropify.min.js')}}"></script>
+
+    <!-- Init js-->
+    <script src="{{asset('assets/js/pages/form-fileuploads.init.js')}}"></script>
+
+    <script src="{{asset('assets/libs/sweetalert2/sweetalert2.min.js')}}"></script>
+
+    <script src="{{asset('assets/js/pages/sweetalerts.init.js')}}"></script>
+
+    <!-- Datatable plugin js -->
+    <script src="{{asset('assets/libs/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('assets/libs/datatables/dataTables.bootstrap4.min.js')}}"></script>
+
+    <script src="{{asset('assets/libs/datatables/dataTables.responsive.min.js')}}"></script>
+    <script src="{{asset('assets/libs/datatables/responsive.bootstrap4.min.js')}}"></script>
+
+    <script src="{{asset('assets/libs/datatables/dataTables.buttons.min.js')}}"></script>
+    <script src="{{asset('assets/libs/datatables/buttons.bootstrap4.min.js')}}"></script>
+
+    <script src="{{asset('assets/libs/datatables/buttons.html5.min.js')}}"></script>
+    <script src="{{asset('assets/libs/datatables/buttons.print.min.js')}}"></script>
+
+    <script src="{{asset('assets/libs/jszip/jszip.min.js')}}"></script>
+    <script src="{{asset('assets/libs/pdfmake/pdfmake.min.js')}}"></script>
+    <script src="{{asset('assets/libs/pdfmake/vfs_fonts.js')}}"></script>
+
+     <!-- Datatables init -->
+     <script src="{{asset('assets/js/pages/datatables.init.js')}}"></script>
     
     <!-- App js -->
     <script src="{{asset('assets/js/app.min.js')}}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@2/dist/tinymce-jquery.min.js"></script>
+
 
     @yield('scripts')
 
