@@ -28,7 +28,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect waves-light">
+                    <a href="{{route('admin.all.candidates')}}" class="waves-effect waves-light">
                         <i class="mdi mdi-worker"></i>
                         <span>  Candidates  </span>
                     </a>

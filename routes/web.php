@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Blog\BlogController;
+use App\Http\Controllers\Candidate\CandidateController;
 use App\Http\Controllers\Career\CareerController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use Illuminate\Support\Facades\Route;
@@ -40,4 +41,8 @@ Route::group(['prefix' => 'opening'], function(){
     Route::post('change-status', [CareerController::class, 'changeStatus'])->name('admin.change.status');
     Route::get('view/{id}', [CareerController::class, 'viewOpening'])->name('admin.view.opening');
     Route::post('edit', [CareerController::class, 'editOpening'])->name('admin.edit.opening');
+});
+
+Route::group(['prefix' => 'candidate'], function(){
+    Route::get('all-candidates', [CandidateController::class, 'allCandidates'])->name('admin.all.candidates');
 });
