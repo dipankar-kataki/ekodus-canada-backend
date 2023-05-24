@@ -34,7 +34,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect waves-light">
+                    <a href="{{route('admin.get.all.services')}}" class="waves-effect waves-light">
                         <i class="mdi mdi-sitemap"></i>
                         <span>  Services  </span>
                     </a>

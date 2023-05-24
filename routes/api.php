@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Blog\BlogApiController;
 use App\Http\Controllers\Candidate\CandidateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,4 +22,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::group(['prefix' => 'candidate'], function(){
     Route::post('register', [CandidateController::class, 'register']);
+});
+
+Route::group(['prefix' => 'blogs'], function(){
+    Route::get('get', [BlogApiController::class, 'getBlogs']);
+    Route::get('details', [BlogApiController::class, 'getBlogs']);
 });

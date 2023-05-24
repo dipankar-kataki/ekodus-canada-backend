@@ -88,4 +88,18 @@ class BlogController extends Controller
             return response()->json(['message' => 'Oops! Something Went Wrong.'.$e, 'status' => 0]);
         }
     }
+
+    public function changeStatusBlog(Request $request){
+        try{
+            $id = decrypt($request->id);
+
+            Blog::where('id', $id)->update([
+                'status' => $request->status
+            ]);
+
+            return response()->json(['message' => 'Great! Status Updated Successfully', 'status' => 1]);
+        }catch(\Exception $e){
+            return response()->json(['message' => 'Oops! Something Went Wrong'. $e, 'status' => 0 ]);
+        }
+    }
 }

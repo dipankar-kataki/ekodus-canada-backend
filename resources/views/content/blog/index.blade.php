@@ -19,10 +19,10 @@
                                 
                                 <div>
                                     @if ($blog->status === 1)
-                                        <input type="checkbox" id="switch1" checked data-switch="none" />
+                                        <input type="checkbox" id="switch1" checked data-switch="none"  class="changeStatus" data-id="{{encrypt($blog->id)}}" data-status="0"/>
                                         <label for="switch1" data-on-label="On" data-off-label="Off"></label>
                                     @else
-                                        <input type="checkbox" id="switch1" data-switch="none" />
+                                        <input type="checkbox" id="switch1" data-switch="none" class="changeStatus" data-id="{{encrypt($blog->id)}}" data-status="1" />
                                         <label for="switch1" data-on-label="On" data-off-label="Off"></label>
                                     @endif
                                     
@@ -166,5 +166,45 @@
             });
         });
             
+    </script>
+
+    <script>
+        $('.changeStatus').on('click', function(){
+        
+            const id = $(this).data('id');
+            const status = $(this).data('status')
+
+
+            $.ajax({
+                url:"{{route('admin.blog.change.status')}}",
+                type:"POST",
+                data:{
+                    id: id,
+                    status: status,
+                    '_token': "{{csrf_token()}}"
+                },
+                success:function(data){
+
+                    if(data.status === 1){
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Great!',
+                            text: data.message,
+                        })
+
+                        location.reload(true)
+                    }else{
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops!',
+                            text: data.message,
+                        })
+                    }
+                    
+                }, error:function(error){
+                    console.log(error)
+                }
+            })
+        })
     </script>
 @endsection

@@ -4,6 +4,7 @@ use App\Http\Controllers\Blog\BlogController;
 use App\Http\Controllers\Candidate\CandidateController;
 use App\Http\Controllers\Career\CareerController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Service\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,7 @@ Route::group(['prefix' => 'create'], function(){
 
 Route::group(['prefix' => 'edit'], function(){
     Route::post('blog', [BlogController::class, 'editBlog'])->name('admin.edit.blog');
+    Route::post('change-status', [BlogController::class, 'changeStatusBlog'])->name('admin.blog.change.status');
 });
 
 Route::group(['prefix' => 'opening'], function(){
@@ -45,4 +47,13 @@ Route::group(['prefix' => 'opening'], function(){
 
 Route::group(['prefix' => 'candidate'], function(){
     Route::get('all-candidates', [CandidateController::class, 'allCandidates'])->name('admin.all.candidates');
+});
+
+Route::group(['prefix' => 'service'], function(){
+    Route::get('all', [ServiceController::class, 'getAllServices'])->name('admin.get.all.services');
+    Route::post('create', [ServiceController::class, 'createService'])->name('admin.create.service');
+    Route::get('details/{id}', [ServiceController::class, 'serviceDetails'])->name('admin.service.details');
+    Route::get( 'edit-service/{id}', [ServiceController::class, 'editService'])->name('admin.edit.service');
+    Route::post( 'save-edit-service', [ServiceController::class, 'saveEditService'])->name('admin.save.edit.service');
+    Route::post('change-status', [ServiceController::class, 'changeStatus'])->name('admin.service.change.status');
 });
