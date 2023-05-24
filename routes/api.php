@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\Blog\BlogApiController;
+use App\Http\Controllers\Api\Product\ProductApiController;
 use App\Http\Controllers\Api\Service\ServiceApiController;
 use App\Http\Controllers\Candidate\CandidateController;
 use Illuminate\Http\Request;
@@ -34,3 +35,10 @@ Route::group(['prefix' => 'service'], function(){
     Route::get('get', [ServiceApiController::class, 'getAllService']);
     Route::get('details', [ServiceApiController::class, 'serviceDetails']);
 });
+
+Route::group(['prefix' => 'products'], function(){
+    Route::get('get', [ProductApiController::class, 'getAllProducts']);
+    Route::get('details', [ProductApiController::class, 'productDetails']);
+});
+
+
