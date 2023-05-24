@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\Blog\BlogApiController;
+use App\Http\Controllers\Api\Service\ServiceApiController;
 use App\Http\Controllers\Candidate\CandidateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -27,4 +28,9 @@ Route::group(['prefix' => 'candidate'], function(){
 Route::group(['prefix' => 'blogs'], function(){
     Route::get('get', [BlogApiController::class, 'getBlogs']);
     Route::get('details', [BlogApiController::class, 'getBlogs']);
+});
+
+Route::group(['prefix' => 'service'], function(){
+    Route::get('get', [ServiceApiController::class, 'getAllService']);
+    Route::get('details', [ServiceApiController::class, 'serviceDetails']);
 });

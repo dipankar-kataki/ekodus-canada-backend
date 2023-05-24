@@ -4,7 +4,9 @@ use App\Http\Controllers\Blog\BlogController;
 use App\Http\Controllers\Candidate\CandidateController;
 use App\Http\Controllers\Career\CareerController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\Service\ServiceController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -56,4 +58,13 @@ Route::group(['prefix' => 'service'], function(){
     Route::get( 'edit-service/{id}', [ServiceController::class, 'editService'])->name('admin.edit.service');
     Route::post( 'save-edit-service', [ServiceController::class, 'saveEditService'])->name('admin.save.edit.service');
     Route::post('change-status', [ServiceController::class, 'changeStatus'])->name('admin.service.change.status');
+});
+
+Route::group(['prefix' => 'product'], function(){
+    Route::get('all', [ProductController::class, 'getAllProducts'])->name('admin.get.all.products');
+    Route::post('create', [ProductController::class, 'createProduct'])->name('admin.create.product');
+    Route::get('details/{id}', [ProductController::class, 'productDetails'])->name('admin.product.details');
+    Route::get( 'edit-product/{id}', [ProductController::class, 'editProduct'])->name('admin.edit.product');
+    Route::post( 'save-edit-product', [ProductController::class, 'saveEditProduct'])->name('admin.save.edit.product');
+    Route::post('change-status', [ProductController::class, 'changeStatus'])->name('admin.product.change.status');
 });

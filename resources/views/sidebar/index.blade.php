@@ -40,7 +40,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect waves-light">
+                    <a href="{{route('admin.get.all.products')}}" class="waves-effect waves-light">
                         <i class="mdi mdi-wallet-membership"></i>
                         <span>  Products  </span>
                     </a>

@@ -19,10 +19,10 @@ class BlogApiController extends Controller
 
     public function details(){
         if(!isset($_GET['blog_id'])){
-            return response()->json(['message' => 'Oops! Invalid Parameters Pased.', 'status' => 0]);
+            return response()->json(['message' => 'Oops! Invalid Parameters Passed.', 'status' => 0]);
         }else{
             if($_GET['blog_id'] == 0){
-                return response()->json(['message' => 'Oops! Invalid Parameters Pased.', 'status' => 0]);
+                return response()->json(['message' => 'Oops! Invalid Parameters Passed.', 'status' => 0]);
             }else{
                 try{
                     $get_blog_details = Blog::where('id', $_GET['blog_id'])->where('status', 1)->first();
