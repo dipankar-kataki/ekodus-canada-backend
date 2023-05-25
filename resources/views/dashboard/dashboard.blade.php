@@ -12,7 +12,7 @@
                     </div>
                     <div class="overflow-hidden">
                         <p class="text-uppercase font-weight-medium text-truncate mb-2">Total Services</p>
-                        <h2 class="mb-0"><span data-plugin="counterup">{{$total_services}}</span></h2>
+                        <h2 class="mb-0"><span data-plugin="counterup">{{$total_services ?? 0}}</span></h2>
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                     </div>
                     <div class="overflow-hidden">
                         <p class="text-uppercase font-weight-medium text-truncate mb-2">Resumes Recieved</p>
-                        <h2 class="mb-0"><span data-plugin="counterup">{{$total_candidates}}</span></h2>
+                        <h2 class="mb-0"><span data-plugin="counterup">{{$total_candidates ?? 0}}</span></h2>
                     </div>
 
                 </div>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="overflow-hidden">
                         <p class="text-uppercase font-weight-medium text-truncate mb-2">Total Products</p>
-                        <h2 class="mb-0"><span data-plugin="counterup">{{$total_products}}</span></h2>
+                        <h2 class="mb-0"><span data-plugin="counterup">{{$total_products ?? 0}}</span></h2>
                     </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                     </div>
                     <div class="overflow-hidden">
                         <p class="text-uppercase font-weight-medium text-truncate mb-2">Total Blogs</p>
-                        <h2 class="mb-0"><span data-plugin="counterup">{{$total_blogs}}</span></h2>
+                        <h2 class="mb-0"><span data-plugin="counterup">{{$total_blogs ?? 0}}</span></h2>
                     </div>
 
                 </div>
