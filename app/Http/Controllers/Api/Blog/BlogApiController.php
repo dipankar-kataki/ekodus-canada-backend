@@ -10,7 +10,7 @@ class BlogApiController extends Controller
 {
     public function getBlogs(){
         try{
-            $get_blogs = Blog::orderBy('created_at', 'DESC')->get();
+            $get_blogs = Blog::orderBy('created_at', 'DESC')->where('status', 1)->get();
             return response()->json(['message' => 'Details Fetched Successfully', 'blogs' => $get_blogs, 'status' => 1]);
         }catch(\Exception $e){
             return response()->json(['message' => 'Oops! Something Went Wrong.', 'status' => 0]);
