@@ -113,14 +113,15 @@
                 success: function(data){
 
                     if(data.status === 1){
+                        $('#productSubmitBtn').attr('disabled', false)
+                        $('#productSubmitBtn').text('Submit')
                         Swal.fire({
                             icon: 'success',
                             title: 'Great!',
                             text: data.message,
                             confirmButtonText: 'Close',
                         })
-                        $('#productSubmitBtn').attr('disabled', false)
-                        $('#productSubmitBtn').text('Submit')
+                        
                     }else{
                         Swal.fire({
                             icon: 'error',

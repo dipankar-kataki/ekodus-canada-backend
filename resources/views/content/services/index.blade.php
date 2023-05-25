@@ -153,6 +153,8 @@
                 success: function(data){
 
                     if(data.status === 1){
+                        $('#serviceSubmitBtn').attr('disabled', false)
+                        $('#serviceSubmitBtn').text('Submit')
                         Swal.fire({
                             icon: 'success',
                             title: 'Great!',
@@ -161,8 +163,7 @@
                         })
 
                         location.reload('true')
-                        $('#serviceSubmitBtn').attr('disabled', false)
-                        $('#serviceSubmitBtn').text('Submit')
+                        
                     }else{
                         Swal.fire({
                             icon: 'error',

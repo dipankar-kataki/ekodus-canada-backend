@@ -76,6 +76,9 @@
                 success: function(data){
 
                     if(data.status === 1){
+
+                        $('#blogSubmitBtn').attr('disabled', false)
+                        $('#blogSubmitBtn').text('Submit')
                         Swal.fire({
                             icon: 'success',
                             title: 'Great!',
@@ -83,8 +86,7 @@
                             confirmButtonText: 'Close',
                         })
 
-                        $('#blogSubmitBtn').attr('disabled', false)
-                        $('#blogSubmitBtn').text('Submit')
+                        
                     }else{
                         Swal.fire({
                             icon: 'error',
