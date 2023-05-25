@@ -140,7 +140,7 @@
                             confirmButtonText: 'Close',
                         })
 
-                        location.reload('true')
+                        window.location.reload();
                     }else{
                         Swal.fire({
                             icon: 'error',
