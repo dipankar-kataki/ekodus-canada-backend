@@ -28,7 +28,7 @@ Route::group(['prefix' => 'candidate'], function(){
 
 Route::group(['prefix' => 'blogs'], function(){
     Route::get('get', [BlogApiController::class, 'getBlogs']);
-    Route::get('details', [BlogApiController::class, 'getBlogs']);
+    Route::get('details', [BlogApiController::class, 'details']);
 });
 
 Route::group(['prefix' => 'service'], function(){
