@@ -161,6 +161,9 @@
                         })
 
                         location.reload('true')
+
+                        $('#productSubmitBtn').attr('disabled', false)
+                        $('#productSubmitBtn').text('Submit')
                     }else{
                         Swal.fire({
                             icon: 'error',

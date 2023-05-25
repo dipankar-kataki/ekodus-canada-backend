@@ -82,6 +82,9 @@
                             text: data.message,
                             confirmButtonText: 'Close',
                         })
+
+                        $('#blogSubmitBtn').attr('disabled', false)
+                        $('#blogSubmitBtn').text('Submit')
                     }else{
                         Swal.fire({
                             icon: 'error',

@@ -112,6 +112,9 @@
                         })
 
                         location.reload('true')
+
+                        $('#editSubmitBtn').attr('disabled', false)
+                        $('#editSubmitBtn').text('Submit')
                     }else{
                         Swal.fire({
                             icon: 'error',

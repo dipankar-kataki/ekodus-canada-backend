@@ -230,6 +230,9 @@
                         })
 
                         location.reload('true')
+
+                        $('#openingSubmitBtn').attr('disabled', false)
+                        $('#openingSubmitBtn').text('Submit')
                     }else{
                         Swal.fire({
                             icon: 'error',
