@@ -60,7 +60,7 @@ class CandidateController extends Controller
                     return response()->json(['message' => 'Great! Details Submitted Successfully.', 'status' => 1]);
                 }
             }catch(\Exception $e){
-                return response()->json(['message' => 'Oops! Something Went Wrong.'.$e, 'status' => 0]);
+                return response()->json(['message' => 'Oops! Something Went Wrong.', 'status' => 0]);
             }
         }
     }
