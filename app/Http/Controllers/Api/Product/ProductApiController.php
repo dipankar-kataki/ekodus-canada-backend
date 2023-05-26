@@ -11,7 +11,7 @@ class ProductApiController extends Controller
     public function getAllProducts(){
         try{
             $all_products = Product::where('status', 1)->orderBy('created_at', 'DESC')->get();
-            return response()->json(['message' => 'Great! Details Fetched Successfully','services' => $all_products, 'status' => 1]);
+            return response()->json(['message' => 'Great! Details Fetched Successfully','products' => $all_products, 'status' => 1]);
         }catch(\Exception $e){
             return response()->json(['message' => 'Oops! Something Went Wrong', 'status' => 0]);
         }
