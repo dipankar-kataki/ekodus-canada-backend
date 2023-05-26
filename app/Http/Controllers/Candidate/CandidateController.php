@@ -19,6 +19,7 @@ class CandidateController extends Controller
     }
 
     public function register(Request $request){
+        return response()->json(['response'=> $request->all()]);
         $validator = Validator::make($request->all(), [
             'first_name' => 'required',
             'last_name' => 'required',
