@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\Blog\BlogApiController;
+use App\Http\Controllers\Api\Career\CareerApiController;
 use App\Http\Controllers\Api\Product\ProductApiController;
 use App\Http\Controllers\Api\Service\ServiceApiController;
 use App\Http\Controllers\Candidate\CandidateController;
@@ -39,6 +40,11 @@ Route::group(['prefix' => 'service'], function(){
 Route::group(['prefix' => 'products'], function(){
     Route::get('get', [ProductApiController::class, 'getAllProducts']);
     Route::get('details', [ProductApiController::class, 'productDetails']);
+});
+
+Route::group(['prefix' => 'career'], function(){
+    Route::get('get', [CareerApiController::class, 'getCareer']);
+    Route::get('details', [CareerApiController::class, 'getCareerDetails']);
 });
 
 
