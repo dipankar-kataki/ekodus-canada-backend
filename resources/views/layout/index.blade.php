@@ -132,9 +132,9 @@
     <!-- App js -->
     <script src="{{asset('assets/js/app.min.js')}}"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@2/dist/tinymce-jquery.min.js"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@2/dist/tinymce-jquery.min.js"></script> --}}
 
-
+    <script src="https://cdn.tiny.cloud/1/5j2l4jcabbzdkp9sry2tdior3xphuc96sxz4bi4vk6bf0q3a/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     @yield('scripts')
 
 </body>
