@@ -26,7 +26,7 @@ class CandidateController extends Controller
             'gender' => 'required',
             'country_code' => 'required',
             'phone' => 'required',
-            'resume' => "required|max:5000"
+            'resume' => "required|mimes:pdf,docx|max:5000"
         ]);
 
         if($validator->fails()){
