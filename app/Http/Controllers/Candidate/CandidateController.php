@@ -24,6 +24,7 @@ class CandidateController extends Controller
             'last_name' => 'required',
             'email' => 'required|email',
             'gender' => 'required',
+            'country_code' => 'required',
             'phone' => 'required',
             'resume' => "required|mimes:pdf,docx|max:5000"
         ]);
@@ -39,7 +40,7 @@ class CandidateController extends Controller
                     $resumeName = 'Candidate/Resume/' . $resume;
                 }
 
-                $check_if_phone_exists = Candidate::where('phone', $request->phone)->exists();
+                $check_if_phone_exists = Candidate::where('phone', $request->country_code.$request->phone)->exists();
                 $check_if_email_exists = Candidate::where('email', $request->email)->exists();
 
                 if($check_if_email_exists){
@@ -52,7 +53,7 @@ class CandidateController extends Controller
                         'last_name' => $request->last_name,
                         'email' => $request->email,
                         'gender' => $request->gender,
-                        'phone' => $request->phone,
+                        'phone' => $request->country_code.$request->phone,
                         'resume' => $resumeName
                     ]);
 
