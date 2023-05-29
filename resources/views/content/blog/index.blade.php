@@ -6,7 +6,7 @@
         <button class="btn btn-md btn-primary" data-toggle="modal" data-target="#createBlog">Create Blog</button>
     </div>
     <div class="port mb-3 mt-3">
-        <div class="portfolioContainer row">
+        <div class="row">
             @forelse ($blogs as $blog)
                 <div class="col-md-4 col-xl-4">
                     <div class="card blog-post">
