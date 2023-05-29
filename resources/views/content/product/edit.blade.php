@@ -60,7 +60,7 @@
             </div>
         </div>
         <div class="modal-footer">
-            <a href="{{route('admin.get.all.services')}}" class="btn btn-secondary waves-effect">Close</a>
+            <a href="{{route('admin.get.all.products')}}" class="btn btn-secondary waves-effect">Close</a>
             <button type="submit" class="btn btn-info waves-effect waves-light" id="productSubmitBtn">Submit</button>
         </div>
     </form>
