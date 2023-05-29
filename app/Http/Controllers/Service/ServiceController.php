@@ -104,7 +104,7 @@ class ServiceController extends Controller
             return response()->json(['message' => 'Great! Service Edited Successfully.', 'status' => 1]);
             
         }catch(\Exception $e){
-            return response()->json(['message' => 'Oops! Something Went Wrong.'.$e->getMessage(), 'status' => 0]);
+            return response()->json(['message' => 'Oops! Something Went Wrong.', 'status' => 0]);
         }
     }
 
@@ -118,7 +118,7 @@ class ServiceController extends Controller
 
             return response()->json(['message' => 'Great! Status Updated Successfully', 'status' => 1]);
         }catch(\Exception $e){
-            return response()->json(['message' => 'Oops! Something Went Wrong'. $e, 'status' => 0 ]);
+            return response()->json(['message' => 'Oops! Something Went Wrong', 'status' => 0 ]);
         }
     }
 }

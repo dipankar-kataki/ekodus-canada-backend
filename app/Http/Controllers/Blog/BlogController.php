@@ -85,7 +85,7 @@ class BlogController extends Controller
 
             return response()->json(['message' => 'Great! Blog Updated Successfully', 'status' => 1]);
         }catch(\Exception $e){
-            return response()->json(['message' => 'Oops! Something Went Wrong.'.$e, 'status' => 0]);
+            return response()->json(['message' => 'Oops! Something Went Wrong.', 'status' => 0]);
         }
     }
 
@@ -99,7 +99,7 @@ class BlogController extends Controller
 
             return response()->json(['message' => 'Great! Status Updated Successfully', 'status' => 1]);
         }catch(\Exception $e){
-            return response()->json(['message' => 'Oops! Something Went Wrong'. $e, 'status' => 0 ]);
+            return response()->json(['message' => 'Oops! Something Went Wrong', 'status' => 0 ]);
         }
     }
 }
