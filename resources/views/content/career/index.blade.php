@@ -139,7 +139,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="field-1" class="control-label">Job Location</label>
-                                    <input type="text" class="form-control" id="location" name="location" placeholder="e.g. India">
+                                    <input type="text" class="form-control" id="location" name="location" placeholder="e.g. Canada">
                                 </div>
                             </div>
                             <div class="col-md-12">
