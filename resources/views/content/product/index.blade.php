@@ -8,34 +8,66 @@
         <div class="portfolioContainer row">
             @forelse ($products as $item)
                 <div class="col-md-4 col-xl-4">
-                    <div class="gallery-box">
-                        <a href="#" class="image-popup">
-                            <img src="{{asset($item->image)}}" class="thumb-img img-fluid" alt="work-thumbnail" style="height:250px;object-fit:cover;">
-                        </a>
-                        <div class="gal-detail p-3">
+
+                    {{-- <div class="card blog-post">
+                        <div class="post-image">
+                            <img src="{{asset($item->image)}}" alt="" class="img-fluid mx-auto d-block" style="height:300px;object-fit:cover;">
+                        </div>
+                        <div class="card-body">
+    
                             <div class="d-flex flex-row justify-content-between">
-                                <h4 class="font-16 mt-0" style="background:none;">{!! Str::limit($item->title, 40)  !!}</h4>
-                                
+                                <div>
+                                    <span>Posted on: <span>{{Carbon\Carbon::parse($item->created_at)->format('M d, Y')}}</span>
+                                </div>
                                 <div>
                                     @if ($item->status === 1)
                                     <p class="text-success">Active</p>
-                                    {{-- <input type="checkbox" id="switch1" checked data-switch="none"  class="changeStatus" data-id="{{encrypt($blog->id)}}" data-status="0"/>
-                                    <label for="switch1" data-on-label="On" data-off-label="Off"></label> --}}
                                     @else
                                         <p class="text-danger">De-Active</p>
-                                        {{-- <input type="checkbox" id="switch1" data-switch="none" class="changeStatus" data-id="{{encrypt($blog->id)}}" data-status="1" />
-                                        <label for="switch1" data-on-label="On" data-off-label="Off"></label> --}}
                                     @endif
-                                    
                                 </div>
                             </div>
-                            <p class="text-muted mb-0">
-                                {!! Str::limit($item->short_description, 100)  !!}
-                            </p>
-                            
+                            <div class="post-title">
+                                <h5><a href="javascript:void(0);">{!! Str::limit($item->title, 35)  !!}</a></h5>
+                            </div>
+                            <div>
+                                <p> {!! Str::limit($item->short_description, 100)  !!}</p>
+                            </div>
+                            <div class="text-right">
+                                <a href="{{route('admin.edit.product', ['id' => encrypt($item->id) ])}}" class="btn btn-sm btn-purple waves-effect width-md waves-light" style="background-color: #574ba3;border-color: #53479a;">Edit</a>
+    
+                                <a href="{{route('admin.product.details', ['id' => encrypt($item->id)] )}}" class="btn btn-success btn-sm waves-effect waves-light">Read More <i class="mdi mdi-arrow-right ml-1"></i></a>
+                            </div>
+    
+                        </div>
+                    </div> --}}
+
+                    <div class="card blog-post">
+                        <div class="card-header">
+                            <img src="{{asset($item->image)}}" alt="" class="img-fluid mx-auto d-block" style="height:300px;object-fit:cover;">
+                        </div>
+                        <div class="card-body">
                             <div class="d-flex flex-row justify-content-between">
-                                <a href="{{route('admin.edit.product', ['id' => encrypt($item->id) ])}}" class="btn btn-sm btn-purple waves-effect width-md waves-light mt-2 mb-3" style="background-color: #574ba3;border-color: #53479a;">Edit</a>
-                                <a href="{{route('admin.product.details', ['id' => encrypt($item->id)] )}}" class="btn btn-sm btn-secondary waves-effect width-md waves-light mt-2 mb-3 float-right">Read More</a>
+                                <div>
+                                    <span>Posted on: <span>{{Carbon\Carbon::parse($item->created_at)->format('M d, Y')}}</span>
+                                </div>
+                                <div>
+                                    @if ($item->status === 1)
+                                    <p class="text-success">Active</p>
+                                    @else
+                                        <p class="text-danger">De-Active</p>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="card-title">
+                                <h5><a href="javascript:void(0);">{!! Str::limit($item->title, 35)  !!}</a></h5>
+                            </div>
+                            <div class="card-text">
+                                <p> {!! Str::limit($item->short_description, 100)  !!}</p>
+                            </div>
+                            <div class="d-flex flex-row justify-content-end">
+                                <a href="{{route('admin.edit.product', ['id' => encrypt($item->id) ])}}" class="btn btn-md btn-purple card-link  pa-2">Edit</a>
+                                <a href="{{route('admin.product.details', ['id' => encrypt($item->id)] )}}" class="btn btn-md btn-success card-link pa-2">Read More</a>
                             </div>
                         </div>
                     </div>
