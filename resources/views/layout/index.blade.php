@@ -24,7 +24,7 @@
     <link href="{{asset('assets/libs/datatables/responsive.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('assets/libs/datatables/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
 
-    
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 
     @yield('custom-style')
 
@@ -110,6 +110,8 @@
     <script src="{{asset('assets/js/pages/sweetalerts.init.js')}}"></script>
 
     <!-- Datatable plugin js -->
+
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="{{asset('assets/libs/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('assets/libs/datatables/dataTables.bootstrap4.min.js')}}"></script>
 
