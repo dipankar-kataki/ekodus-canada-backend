@@ -9,40 +9,6 @@
         <div class="portfolioContainer row">
             @forelse ($blogs as $blog)
                 <div class="col-md-4 col-xl-4">
-
-                    {{-- <div class="card blog-post">
-                        <div class="post-image">
-                            <img src="{{asset($blog->image)}}" alt="" class="img-fluid mx-auto d-block" style="height:300px;object-fit:cover;">
-                        </div>
-                        <div class="card-body">
-    
-                            <div class="d-flex flex-row justify-content-between">
-                                <div>
-                                    <span>Posted on: <span>{{Carbon\Carbon::parse($blog->created_at)->format('M d, Y')}}</span>
-                                </div>
-                                <div>
-                                    @if ($blog->status === 1)
-                                    <p class="text-success">Active</p>
-                                    @else
-                                        <p class="text-danger">De-Active</p>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="post-title">
-                                <h5><a href="javascript:void(0);">{!! Str::limit($blog->title, 35)  !!}</a></h5>
-                            </div>
-                            <div>
-                                <p> {!! Str::limit($blog->content, 50)  !!}</p>
-                            </div>
-                            <div class="text-right">
-                                <a href="{{route('admin.view.blog', ['id' => encrypt($blog->id) ])}}" class="btn btn-sm btn-purple waves-effect width-md waves-light" style="background-color: #574ba3;border-color: #53479a;">Edit</a>
-    
-                                <a href="{{route('admin.view.blog.details', ['id' => encrypt($blog->id)] )}}" class="btn btn-success btn-sm waves-effect waves-light">Read More <i class="mdi mdi-arrow-right ml-1"></i></a>
-                            </div>
-    
-                        </div>
-                    </div> --}}
-
                     <div class="card blog-post">
                         <div class="card-header">
                             <img src="{{asset($blog->image)}}" alt="" class="img-fluid mx-auto d-block" style="height:300px;object-fit:cover;">
