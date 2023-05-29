@@ -5,47 +5,45 @@
     <div class="d-flex flex-row justify-content-end">
         <button class="btn btn-md btn-primary" data-toggle="modal" data-target="#createBlog">Create Blog</button>
     </div>
-    <div class="port mb-3 mt-3">
-        <div class="row">
-            @forelse ($blogs as $blog)
-                <div class="col-md-4 col-xl-4">
-                    <div class="card blog-post">
-                        <div class="card-header">
-                            <img src="{{asset($blog->image)}}" alt="" class="img-fluid mx-auto d-block" style="height:300px;object-fit:cover;">
+    <div class="row">
+        @forelse ($blogs as $blog)
+            <div class="col-md-4 col-xl-4">
+                <div class="card blog-post">
+                    <div class="card-header">
+                        <img src="{{asset($blog->image)}}" alt="" class="img-fluid mx-auto d-block" style="height:300px;object-fit:cover;">
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex flex-row justify-content-between">
+                            <div>
+                                <span>Posted on: <span>{{Carbon\Carbon::parse($blog->created_at)->format('M d, Y')}}</span>
+                            </div>
+                            <div>
+                                @if ($blog->status === 1)
+                                <p class="text-success">Active</p>
+                                @else
+                                    <p class="text-danger">De-Active</p>
+                                @endif
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <div class="d-flex flex-row justify-content-between">
-                                <div>
-                                    <span>Posted on: <span>{{Carbon\Carbon::parse($blog->created_at)->format('M d, Y')}}</span>
-                                </div>
-                                <div>
-                                    @if ($blog->status === 1)
-                                    <p class="text-success">Active</p>
-                                    @else
-                                        <p class="text-danger">De-Active</p>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="card-title">
-                                <h5><a href="javascript:void(0);">{!! Str::limit($blog->title, 35)  !!}</a></h5>
-                            </div>
-                            <div class="card-text">
-                                <p> {!! Str::limit($blog->content, 50)  !!}</p>
-                            </div>
-                            <div class="d-flex flex-row justify-content-end">
-                                <a href="{{route('admin.view.blog', ['id' => encrypt($blog->id) ])}}" class="btn btn-md btn-purple card-link  pa-2">Edit</a>
-                                <a href="{{route('admin.view.blog.details', ['id' => encrypt($blog->id)] )}}" class="btn btn-md btn-success card-link pa-2">Read More</a>
-                            </div>
+                        <div class="card-title">
+                            <h5><a href="javascript:void(0);">{!! Str::limit($blog->title, 35)  !!}</a></h5>
+                        </div>
+                        <div class="card-text">
+                            <p> {!! Str::limit($blog->content, 50)  !!}</p>
+                        </div>
+                        <div class="d-flex flex-row justify-content-end">
+                            <a href="{{route('admin.view.blog', ['id' => encrypt($blog->id) ])}}" class="btn btn-md btn-purple card-link  pa-2">Edit</a>
+                            <a href="{{route('admin.view.blog.details', ['id' => encrypt($blog->id)] )}}" class="btn btn-md btn-success card-link pa-2">Read More</a>
                         </div>
                     </div>
                 </div>
-                
-            @empty
-                <div class="text-center">
-                    <h6>No Blogs To Show :(</h6>
-                </div>
-            @endforelse
-        </div>
+            </div>
+            
+        @empty
+            <div class="text-center">
+                <h6>No Blogs To Show :(</h6>
+            </div>
+        @endforelse
     </div>
 
     <div id="createBlog" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
