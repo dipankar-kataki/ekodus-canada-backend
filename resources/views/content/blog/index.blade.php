@@ -2,13 +2,41 @@
 @section('title', 'Blogs')
 @section('content')
 
-    <div class="d-flex flex-row justify-content-end">
+    <div class="d-flex flex-row justify-content-end  mb-3">
         <button class="btn btn-md btn-primary" data-toggle="modal" data-target="#createBlog">Create Blog</button>
     </div>
     <div class="row">
         @forelse ($blogs as $blog)
-            <div class="col-md-4 col-xl-4">
-                <div class="card blog-post">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <img src="{{asset($blog->image)}}" alt="" class="img-fluid mx-auto d-block" style="height:300px;object-fit:cover;">
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-row justify-content-between">
+                        <div>
+                            <span>Posted on: <span>{{Carbon\Carbon::parse($blog->created_at)->format('M d, Y')}}</span>
+                        </div>
+                        <div>
+                            @if ($blog->status === 1)
+                            <p class="text-success">Active</p>
+                            @else
+                                <p class="text-danger">De-Active</p>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="card-title mb-3">
+                        <h5><a href="javascript:void(0);">{!! Str::limit($blog->title, 35)  !!}</a></h5>
+                    </div>
+                </div>
+                <div class="d-flex flex-row justify-content-end mb-3 mr-2">
+                    <a href="{{route('admin.view.blog', ['id' => encrypt($blog->id) ])}}" class="btn btn-md btn-purple card-link  pa-2">Edit</a>
+                    <a href="{{route('admin.view.blog.details', ['id' => encrypt($blog->id)] )}}" class="btn btn-md btn-success card-link pa-2">Read More</a>
+                </div>
+            </div>
+        </div>
+            {{-- <div class="col-md-4 col-xl-4">
+                <div class="card">
                     <div class="card-header">
                         <img src="{{asset($blog->image)}}" alt="" class="img-fluid mx-auto d-block" style="height:300px;object-fit:cover;">
                     </div>
@@ -37,7 +65,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             
         @empty
             <div class="text-center">

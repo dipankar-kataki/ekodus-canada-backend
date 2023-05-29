@@ -237,7 +237,6 @@
                     }else{
                         Swal.fire({
                             icon: 'error',
-                            title: 'Oops!',
                             text: data.message
                         });
 
@@ -248,7 +247,6 @@
                 error: function(e){
                     Swal.fire({
                         icon: 'error',
-                        title: 'Oops!',
                         text: data.message
                     });
 

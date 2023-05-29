@@ -36,37 +36,6 @@
                     </div>
                 </div>
             </div>
-
-            {{-- <div class="post-image">
-                <img src="{{asset($item->image)}}" alt="" class="img-fluid mx-auto d-block" style="height:300px;object-fit:cover;">
-            </div>
-            <div class="card-body">
-
-                <div class="d-flex flex-row justify-content-between">
-                    <div>
-                        <span>Posted on: <span>{{Carbon\Carbon::parse($item->created_at)->format('M d, Y')}}</span>
-                    </div>
-                    <div>
-                        @if ($item->status === 1)
-                        <p class="text-success">Active</p>
-                        @else
-                            <p class="text-danger">De-Active</p>
-                        @endif
-                    </div>
-                </div>
-                <div class="post-title">
-                    <h5><a href="javascript:void(0);">{!! Str::limit($item->title, 35)  !!}</a></h5>
-                </div>
-                <div>
-                    <p> {!! Str::limit($item->short_description, 100)  !!}</p>
-                </div>
-                <div class="text-right">
-                    <a href="{{route('admin.edit.service', ['id' => encrypt($item->id) ])}}" class="btn btn-sm btn-purple waves-effect width-md waves-light" style="background-color: #574ba3;border-color: #53479a;">Edit</a>
-
-                    <a href="{{route('admin.service.details', ['id' => encrypt($item->id)] )}}" class="btn btn-success btn-sm waves-effect waves-light">Read More <i class="mdi mdi-arrow-right ml-1"></i></a>
-                </div>
-
-            </div> --}}
         @empty
             <div class="text-center">
                 <h6>No Service To Show :(</h6>
