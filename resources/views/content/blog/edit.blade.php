@@ -33,6 +33,22 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="field-1" class="control-label">Blog Status</label>
+                    <select name="status" id="status" class="form-control">
+                        <option value="{{$blog_details->status}}" selected>
+                            @if ($blog_details->status === 1)
+                                <span class="text-success">Active</span>
+                            @else
+                                <span class="text-danger">De-Active</span>
+                            @endif
+                        </option>
+                        <option value="1" class="text-success">Active</option>
+                        <option value="0" class="text-danger">De-Active</option>
+                    </select>
+                </div>
+            </div>
         </div>
         <div class="modal-footer">
             <a href="{{route('admin.view.blog')}}" class="btn btn-secondary waves-effect">Close</a>

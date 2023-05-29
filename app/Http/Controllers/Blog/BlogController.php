@@ -80,7 +80,8 @@ class BlogController extends Controller
             Blog::where('id', $blog_id)->update([
                 'title' => $request->title ?? $blog_details->title,
                 'content' => $request->blogContent ?? $blog_details->content,
-                'image' => $imageName
+                'image' => $imageName,
+                'status' => $request->status == 1 ? true : false
             ]);
 
             return response()->json(['message' => 'Great! Blog Updated Successfully', 'status' => 1]);

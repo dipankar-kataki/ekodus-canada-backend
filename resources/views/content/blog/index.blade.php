@@ -19,11 +19,13 @@
                                 
                                 <div>
                                     @if ($blog->status === 1)
-                                        <input type="checkbox" id="switch1" checked data-switch="none"  class="changeStatus" data-id="{{encrypt($blog->id)}}" data-status="0"/>
-                                        <label for="switch1" data-on-label="On" data-off-label="Off"></label>
+                                        <p class="text-success">Active</p>
+                                        {{-- <input type="checkbox" id="switch1" checked data-switch="none"  class="changeStatus" data-id="{{encrypt($blog->id)}}" data-status="0"/>
+                                        <label for="switch1" data-on-label="On" data-off-label="Off"></label> --}}
                                     @else
-                                        <input type="checkbox" id="switch1" data-switch="none" class="changeStatus" data-id="{{encrypt($blog->id)}}" data-status="1" />
-                                        <label for="switch1" data-on-label="On" data-off-label="Off"></label>
+                                        <p class="text-danger">De-Active</p>
+                                        {{-- <input type="checkbox" id="switch1" data-switch="none" class="changeStatus" data-id="{{encrypt($blog->id)}}" data-status="1" />
+                                        <label for="switch1" data-on-label="On" data-off-label="Off"></label> --}}
                                     @endif
                                     
                                 </div>

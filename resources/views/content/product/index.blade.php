@@ -18,11 +18,13 @@
                                 
                                 <div>
                                     @if ($item->status === 1)
-                                        <input type="checkbox" id="switch1" checked data-switch="none" class="changeStatus" data-id="{{encrypt($item->id)}}" data-status="0"/>
-                                        <label for="switch1" data-on-label="On" data-off-label="Off"></label>
+                                    <p class="text-success">Active</p>
+                                    {{-- <input type="checkbox" id="switch1" checked data-switch="none"  class="changeStatus" data-id="{{encrypt($blog->id)}}" data-status="0"/>
+                                    <label for="switch1" data-on-label="On" data-off-label="Off"></label> --}}
                                     @else
-                                        <input type="checkbox" id="switch1" data-switch="none" class="changeStatus" data-id="{{encrypt($item->id)}}" data-status="1"/>
-                                        <label for="switch1" data-on-label="On" data-off-label="Off"></label>
+                                        <p class="text-danger">De-Active</p>
+                                        {{-- <input type="checkbox" id="switch1" data-switch="none" class="changeStatus" data-id="{{encrypt($blog->id)}}" data-status="1" />
+                                        <label for="switch1" data-on-label="On" data-off-label="Off"></label> --}}
                                     @endif
                                     
                                 </div>
@@ -198,37 +200,39 @@
           const id = $(this).data('id');
           const status = $(this).data('status')
 
+          console.log('id ===>', id)
 
-          $.ajax({
-              url:"{{route('admin.product.change.status')}}",
-              type:"POST",
-              data:{
-                  id: id,
-                  status: status,
-                  '_token': "{{csrf_token()}}"
-              },
-              success:function(data){
 
-                  if(data.status === 1){
-                      Swal.fire({
-                          icon: 'success',
-                          title: 'Great!',
-                          text: data.message,
-                      })
+        //   $.ajax({
+        //       url:"{{route('admin.product.change.status')}}",
+        //       type:"POST",
+        //       data:{
+        //           id: id,
+        //           status: status,
+        //           '_token': "{{csrf_token()}}"
+        //       },
+        //       success:function(data){
 
-                      location.reload(true)
-                  }else{
-                      Swal.fire({
-                          icon: 'error',
-                          title: 'Oops!',
-                          text: data.message,
-                      })
-                  }
+        //           if(data.status === 1){
+        //               Swal.fire({
+        //                   icon: 'success',
+        //                   title: 'Great!',
+        //                   text: data.message,
+        //               })
+
+        //               location.reload(true)
+        //           }else{
+        //               Swal.fire({
+        //                   icon: 'error',
+        //                   title: 'Oops!',
+        //                   text: data.message,
+        //               })
+        //           }
                   
-              }, error:function(error){
-                  console.log(error)
-              }
-          })
+        //       }, error:function(error){
+        //           console.log(error)
+        //       }
+        //   })
       })
     </script>
 @endsection
