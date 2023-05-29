@@ -23,7 +23,7 @@ class ServiceController extends Controller
         $validator = Validator::make($request->all(), [
             'title' => 'required',
             'serviceImage' => 'required|image|mimes:jpg,png,jpeg|max:1048',
-            'shortDescription' => 'required|max:200',
+            'shortDescription' => 'required',
             'longDescription' => 'required'
         ]);
 
@@ -98,13 +98,13 @@ class ServiceController extends Controller
                 'short_description' => $request->shortDescription ?? $service_details->short_description,
                 'full_description' => $request->longDescription ?? $service_details->full_description,
                 'image' => $imageName,
-                'status' => $request->status
+                'status' => $request->status == 1 ? true : false
             ]);
 
             return response()->json(['message' => 'Great! Service Edited Successfully.', 'status' => 1]);
             
         }catch(\Exception $e){
-            return response()->json(['message' => 'Oops! Something Went Wrong.', 'status' => 0]);
+            return response()->json(['message' => 'Oops! Something Went Wrong.'.$e->getMessage(), 'status' => 0]);
         }
     }
 

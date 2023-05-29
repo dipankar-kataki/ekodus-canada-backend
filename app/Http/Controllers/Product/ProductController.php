@@ -22,7 +22,7 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), [
             'title' => 'required',
             'productImage' => 'required|image|mimes:jpg,png,jpeg|max:1048',
-            'shortDescription' => 'required|max:200',
+            'shortDescription' => 'required',
             'longDescription' => 'required'
         ]);
 
@@ -93,7 +93,7 @@ class ProductController extends Controller
                 'short_description' => $request->shortDescription ?? $product_details->short_description,
                 'full_description' => $request->longDescription ?? $product_details->full_description,
                 'image' => $imageName,
-                'status' => $request->status
+                'status' => $request->status == 1 ? true : false
             ]);
 
             return response()->json(['message' => 'Great! Product Edited Successfully.', 'status' => 1]);
